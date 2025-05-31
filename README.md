@@ -13,14 +13,20 @@ Supports adding, listing, completing, deleting, searching, sorting, and exportin
 - Clear all tasks with confirmation  
 - List tasks with status indicators (✅ / ❌)  
 - Search tasks by keyword  
-- Sort tasks (not completed first)  
+- Sort tasks (not completed first)
+- Filter tasks by date (today / overdue / upcoming / specific date)  
 - Export tasks to a readable `.txt` file  
 
 ---
 
 ## Requirements
 
-- Python 3.8 or higher  
+- Python 3.8 or higher
+- `colorama` module  
+  Install with:  
+  ```
+  pip install colorama
+  ```
 
 ---
 
@@ -40,33 +46,38 @@ python main.py
 
 ## Available Commands
 
-| Command    | Description                          |
-|------------|--------------------------------------|
-| `add`      | Add a new task                       |
-| `list`     | List all tasks                       |
-| `complete` | Mark a task as completed             |
-| `delete`   | Delete a specific task               |
-| `clear`    | Clear all tasks (with confirmation)  |
-| `search`   | Search for tasks by keyword          |
-| `sort`     | Sort tasks (completed first)         |
-| `export`   | Export tasks to `tasks.txt`          |
-| `exit`     | Exit the program                     |
+| Command    | Description                                      |
+|------------|--------------------------------------------------|
+| `add`      | Add a new task with a due date                   |
+| `list`     | List all tasks                                   |
+| `complete` | Mark a task as completed                         |
+| `delete`   | Delete a specific task                           |
+| `clear`    | Clear all tasks (with confirmation)              |
+| `search`   | Search for tasks by keyword                      |
+| `sort`     | Sort tasks (completed first)                     |
+| `filter`   | Filter tasks by date (today / overdue / etc.)    |
+| `export`   | Export tasks to `tasks.txt`                      |
+| `exit`     | Exit the program                                 |
 
 ---
 
 ##  File Structure
+```
 .
-├── main.py              # Main loop
+├── main.py              # Main program loop
 ├── task_logic.py        # Core task operations
-├── tasks_storage.py     # File reading and writing (JSON)
+├── task_filters.py      # Date filtering logic
+├── tasks_storage.py     # JSON file handling
 ├── tasks.json           # Task data file
 ├── tasks.txt            # Exported task list (generated)
+├── run.bat              # Quick launch script (Windows)
 └── README.md            # Project documentation
+```
 
 ---
 
 ## Example Output
 
-1. [❌] Buy groceries
-2. [✅] Submit homework
+1. [❌] 🟥 Buy groceries  📆 Due: 02-06-2025  
+2. [✅] 🟩 Submit homework 📆 Due: 30-05-2025
 
