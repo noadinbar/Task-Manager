@@ -1,0 +1,18 @@
+# Ignore Python cache and compiled files
+__pycache__/
+*.pyc
+
+# VS Code settings
+.vscode/
+
+# Data files
+tasks.json
+tasks.txt
+
+# Environment files
+.env
+*.env
+
+# Windows system files
+Thumbs.db
+Desktop.ini
