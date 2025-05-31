@@ -32,6 +32,9 @@ def main():
             case "export":
                 exp_to_txt(tasks)
 
+            case "filter":
+                filter_by_type(tasks)
+
             case "exit":
                 exit_prog()
                 break
